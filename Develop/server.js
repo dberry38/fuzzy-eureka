@@ -2,18 +2,18 @@
 const express = require('express');
 const fs = require('fs');
 const notesData = require('./db/db.json');
-const { clog } = require('./middleware/clog');
-const api = require('./routes/index.js');
+// const { clog } = require('./middleware/clog');
+// const api = require('./routes/index.js');
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.use(clog);
+// app.use(clog);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', api);
+// app.use('/api', api);
 app.use(express.static('public'));
 
 
@@ -44,8 +44,3 @@ app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
 
-
-
-
-// bonus shmonus
-// add that DELETE my dude
